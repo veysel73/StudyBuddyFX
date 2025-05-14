@@ -6,28 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="364a9302-57b8-4e46-8390-5dff8eb07647" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/HelloController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/KelimeEzberlemeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/KelimeEzberlemeApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/hello-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/HelloController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/KelimeEzberlemeApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/KelimeEzberlemeApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/KelimeEzberlemeApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/hello-view.fxml" beforeDir="false" />
-=======
-<<<<<<< HEAD
-=======
-      <change beforePath="$PROJECT_DIR$/gunluk_kayittari/gunlukler.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gunluk_kayittari/gunlukler.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/loginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/hello-view.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/menu.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/MenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/hello-view.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/loginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/loginController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/menu.fxml" afterDir="false" />
->>>>>>> 79f92c8 (birleştirme yabildi VB)
->>>>>>> 6a45732de045ad441652539897540270f705c9ac
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,36 +60,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.GunlukApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.KelimeEzberlemeApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MenuApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.PomodoroApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.loginApplication.executor&quot;: &quot;Run&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Maven.StudyBuddy [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.StudyBuddy [package].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.StudyBuddy [test].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/SceneBuilder/SceneBuilder.exe&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.26666668&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.AlanSecimApplication.executor": "Run",
+    "Application.GunlukApplication.executor": "Run",
+    "Application.HelloApplication.executor": "Run",
+    "Application.KelimeEzberlemeApplication.executor": "Run",
+    "Application.MenuApplication.executor": "Run",
+    "Application.NotHesaplayiciApplication.executor": "Run",
+    "Application.PomodoroApplication.executor": "Run",
+    "Application.kitapApplication.executor": "Run",
+    "Application.loginApplication.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Maven.StudyBuddy [clean].executor": "Run",
+    "Maven.StudyBuddy [package].executor": "Run",
+    "Maven.StudyBuddy [test].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/SceneBuilder/SceneBuilder.exe",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.26666668",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\StudyBuddyFX\src\main\java\com\example\studybuddy" />

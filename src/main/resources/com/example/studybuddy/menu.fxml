@@ -8,11 +8,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD
+
 <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: YELLOW;" stylesheets="@menu.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studybuddy.MenuController" >
-=======
-<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: YELLOW;" stylesheets="@menu.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studybuddy.MenuController">
->>>>>>> 79f92c8 (birleştirme yabildi VB)
+
+
     <children>
         <!-- Ana Başlık ve Çıkış Butonu -->
         <Label alignment="CENTER" contentDisplay="CENTER" layoutX="245.0" layoutY="110.0" prefHeight="58.0" prefWidth="310.0" text="ANA SAYFA " AnchorPane.leftAnchor="245.0" AnchorPane.rightAnchor="256.4" AnchorPane.topAnchor="50.0">
