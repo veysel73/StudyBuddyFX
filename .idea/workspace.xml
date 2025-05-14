@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="364a9302-57b8-4e46-8390-5dff8eb07647" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/HelloController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/KelimeEzberlemeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/KelimeEzberlemeApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/hello-view.fxml" beforeDir="false" />
@@ -13,6 +14,20 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/KelimeEzberlemeApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/KelimeEzberlemeApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/KelimeEzberlemeApplication.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/hello-view.fxml" beforeDir="false" />
+=======
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/gunluk_kayittari/gunlukler.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gunluk_kayittari/gunlukler.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/loginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/MenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/loginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/loginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/menu.fxml" afterDir="false" />
+>>>>>>> 79f92c8 (birleştirme yabildi VB)
+>>>>>>> 6a45732de045ad441652539897540270f705c9ac
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +128,10 @@
       <updated>1742232287112</updated>
       <workItem from="1745132186815" duration="158000" />
       <workItem from="1745132354187" duration="141000" />
-      <workItem from="1745132521155" duration="305000" />
+      <workItem from="1745132521155" duration="1790000" />
+      <workItem from="1745147304011" duration="5172000" />
+      <workItem from="1745235849254" duration="486000" />
+      <workItem from="1745870043749" duration="36000" />
     </task>
     <servers />
   </component>

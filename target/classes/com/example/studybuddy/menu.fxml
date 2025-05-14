@@ -8,7 +8,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD
 <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: YELLOW;" stylesheets="@menu.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studybuddy.MenuController" >
+=======
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: YELLOW;" stylesheets="@menu.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studybuddy.MenuController">
+>>>>>>> 79f92c8 (birleştirme yabildi VB)
     <children>
         <!-- Ana Başlık ve Çıkış Butonu -->
         <Label alignment="CENTER" contentDisplay="CENTER" layoutX="245.0" layoutY="110.0" prefHeight="58.0" prefWidth="310.0" text="ANA SAYFA " AnchorPane.leftAnchor="245.0" AnchorPane.rightAnchor="256.4" AnchorPane.topAnchor="50.0">
@@ -28,7 +32,7 @@
         <!-- Ana Butonlar -->
         <HBox alignment="CENTER" layoutX="82.0" layoutY="234.0" prefHeight="100.0" prefWidth="677.0" spacing="20.0" AnchorPane.leftAnchor="82.0" AnchorPane.rightAnchor="118.0">
             <children>
-                <Button fx:id="btn1" alignment="CENTER" mnemonicParsing="false" prefHeight="100.0" prefWidth="200.0" text="POMODORO SİSTEMİ">
+                <Button fx:id="btn1" alignment="CENTER" mnemonicParsing="false" onAction="#pomodoroUygulamasiniAc" prefHeight="100.0" prefWidth="200.0" text="POMODORO SİSTEMİ">
                     <font>
                         <Font name="System Bold" size="12.0" />
                     </font>
@@ -38,7 +42,7 @@
                         <Font name="System Bold" size="12.0" />
                     </font>
                 </Button>
-                <Button fx:id="btn3" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="100.0" prefWidth="253.0" text="İNGİLİZCE KELİME EZBERLEME">
+                <Button fx:id="btn3" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#kelimeEzberlemeUygulamasiniAc" prefHeight="100.0" prefWidth="253.0" text="İNGİLİZCE KELİME EZBERLEME">
                     <font>
                         <Font name="System Bold" size="14.0" />
                     </font>
