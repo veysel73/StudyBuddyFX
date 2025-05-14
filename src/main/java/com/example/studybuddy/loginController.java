@@ -1,6 +1,24 @@
 package com.example.studybuddy;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import java.io.IOException;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import java.io.IOException;
+import javafx.fxml.FXML;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.animation.PauseTransition;
+import javafx.util.Duration;
+import java.io.IOException;
 
 public class loginController {
 
@@ -43,10 +61,43 @@ public class loginController {
 
 
         if (kullanici.equals("admin") && sifre.equals("1234")) {
-            lblDurum.setText("✅ Giriş başarılı!");
-        } else {
-            lblDurum.setText("❌ Hatalı kullanıcı adı veya şifre.");
-        }
+            lblDurum.setText("✅ Giriş başarılı! 3 saniye sonra yönlendirileceksiniz...");
+
+            if (kullanici.equals("admin") && sifre.equals("1234")) {
+                lblDurum.setText("✅ Giriş başarılı! 3 saniye sonra yönlendiriliyorsunuz...");
+
+                // 3 saniyelik bekleme süresi ayarla
+                PauseTransition pause = new PauseTransition(Duration.seconds(3));
+                pause.setOnFinished(event -> {
+                    try {
+                        // Menü sayfasını yükle
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/studybuddy/Menu.fxml"));
+                        Parent menuRoot = loader.load();
+
+                        // Yeni bir scene oluştur
+                        Scene menuScene = new Scene(menuRoot);
+
+                        // Mevcut pencereyi al
+                        Stage currentStage = (Stage) lblDurum.getScene().getWindow();
+
+                        // Sahneyi ayarla ve göster
+                        currentStage.setScene(menuScene);
+                        currentStage.setTitle("Study Buddy - Menü");
+                        currentStage.centerOnScreen(); // Pencereyi ortala
+
+                    } catch (IOException e) {
+                        lblDurum.setText("❌ Menü açılırken bir hata oluştu.");
+                        System.err.println("Menü sayfası açılamadı: " + e.getMessage());
+                        e.printStackTrace();
+                    }
+                });
+                pause.play(); // Beklemeyi başlat
+            }
+            else {
+                lblDurum.setVisible(true);
+                lblDurum.setText("❌ Hatalı kullanıcı adı veya şifre.");
+            }
+    }
     }
 
 }
