@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="364a9302-57b8-4e46-8390-5dff8eb07647" name="Changes" comment="">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -75,6 +76,13 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/menu.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/menu.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/newLogin.css" beforeDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/MenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/loginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/loginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/menu.fxml" afterDir="false" />
+>>>>>>> fe9ffdb845cc7897a5f32626dd187676b8c889a6
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,14 +136,20 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.AlanSecimApplication.executor": "Run",
+<<<<<<< HEAD
     "Application.BirdGameApplication.executor": "Run",
+=======
+>>>>>>> fe9ffdb845cc7897a5f32626dd187676b8c889a6
     "Application.GunlukApplication.executor": "Run",
     "Application.HelloApplication.executor": "Run",
     "Application.KelimeEzberlemeApplication.executor": "Run",
     "Application.MenuApplication.executor": "Run",
     "Application.NotHesaplayiciApplication.executor": "Run",
     "Application.PomodoroApplication.executor": "Run",
+<<<<<<< HEAD
     "Application.TodoApplication.executor": "Run",
+=======
+>>>>>>> fe9ffdb845cc7897a5f32626dd187676b8c889a6
     "Application.kitapApplication.executor": "Run",
     "Application.loginApplication.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
@@ -170,27 +184,6 @@
       <recent name="com.example.studybuddy" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="StuddyBuddy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="StuddyBuddy" />
-      <option name="filePath" />
-      <method v="2" />
-    </configuration>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.129" />
-        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.129" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -205,8 +198,11 @@
       <workItem from="1745147304011" duration="5172000" />
       <workItem from="1745235849254" duration="486000" />
       <workItem from="1745870043749" duration="36000" />
+<<<<<<< HEAD
       <workItem from="1747388826423" duration="2176000" />
       <workItem from="1747393781979" duration="3089000" />
+=======
+>>>>>>> fe9ffdb845cc7897a5f32626dd187676b8c889a6
     </task>
     <servers />
   </component>
