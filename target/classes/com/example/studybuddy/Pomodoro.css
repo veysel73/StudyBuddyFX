@@ -1,93 +1,94 @@
-/* Base styles */
+/* Genel arka plan ve yazı tipi */
 .main-pane {
-    -fx-background-color: #1e1e1e;
+    -fx-background-color: linear-gradient(to bottom, #2e2e2e, #1c1c1c);
+    -fx-font-family: "Segoe UI", sans-serif;
 }
 
-.content-pane {
-    -fx-background-color: #2d2d2d;
-}
-
-/* Title bar styles */
+/* Başlık çubuğu */
 .title-bar {
-    -fx-background-color: #3d3d3d;
+    -fx-background-color: #222;
 }
 
+/* Uygulama başlığı */
 .app-title {
+    -fx-font-size: 20px;
     -fx-text-fill: white;
-    -fx-font-weight: bold;
 }
 
-.window-button {
-    -fx-background-color: transparent;
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-cursor: hand;
-    -fx-padding: 0 5 0 5;
-    -fx-background-radius: 0;
-}
-
-.window-button:hover {
-    -fx-background-color: #555555;
-}
-
-.close-button:hover {
-    -fx-background-color: #e81123;
-}
-
-/* Timer option button styles */
+/* Zaman seçme düğmeleri */
 .option-button {
-    -fx-background-color: #404040;
-    -fx-text-fill: white;
-    -fx-background-radius: 20;
-    -fx-font-weight: bold;
+    -fx-background-color: #3b3b3b;
+    -fx-text-fill: #e0e0e0;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #666;
+    -fx-border-width: 1.5;
     -fx-cursor: hand;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0, 0, 2);
-    -fx-padding: 8 15 8 15;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 4, 0, 0, 2);
+    -fx-transition: all 0.3s ease;
 }
 
 .option-button:hover {
-    -fx-background-color: #505050;
+    -fx-background-color: #5a5a5a;
+    -fx-border-color: #888;
 }
 
 .selected-option {
-    -fx-background-color: #8c52ff;
-}
-
-.selected-option:hover {
-    -fx-background-color: #9d6cff;
-}
-
-/* Timer label style */
-.timer-label {
-    -fx-font-size: 48px;
-    -fx-font-weight: bold;
+    -fx-background-color: linear-gradient(to right, #ff6f61, #ff9966);
     -fx-text-fill: white;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 0, 1);
+    -fx-font-weight: bold;
+    -fx-border-color: transparent;
 }
 
-/* Action button styles */
+/* Başlat / Sıfırla butonları */
 .action-button {
-    -fx-background-radius: 20;
+    -fx-background-color: #4caf50;
+    -fx-text-fill: white;
     -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
     -fx-cursor: hand;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 5, 0, 0, 2);
-    -fx-padding: 10 20 10 20;
+    -fx-font-size: 16px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 4, 0, 0, 2);
 }
 
 .start-button {
-    -fx-background-color: #4caf50;
-    -fx-text-fill: white;
+    -fx-background-color: #2196f3;
 }
-
 .start-button:hover {
-    -fx-background-color: #5bba60;
+    -fx-background-color: #1976d2;
 }
 
 .reset-button {
     -fx-background-color: #f44336;
-    -fx-text-fill: white;
+}
+.reset-button:hover {
+    -fx-background-color: #d32f2f;
 }
 
-.reset-button:hover {
-    -fx-background-color: #ff5242;
+/* Geri, küçült, kapat tuşları */
+.window-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+    -fx-padding: 5 10 5 10;
+    -fx-border-radius: 5;
+    -fx-border-color: transparent;
+}
+
+.window-button:hover {
+    -fx-background-color: #444;
+    -fx-border-color: #666;
+}
+
+.close-button:hover {
+    -fx-background-color: #e53935;
+}
+
+/* Zaman sayacı */
+.timer-label {
+    -fx-font-size: 96px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #fff;
 }

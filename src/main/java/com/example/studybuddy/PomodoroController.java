@@ -6,7 +6,10 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
@@ -24,6 +27,7 @@ public class PomodoroController implements Initializable {
     @FXML private Button option25Button;
     @FXML private Button option35Button;
     @FXML private Button option45Button;
+    @FXML private Button backButton; // Yeni eklenen geri dön butonu
     @FXML private HBox timerOptionsContainer;
     @FXML private Pane mainPane;
 
@@ -70,6 +74,31 @@ public class PomodoroController implements Initializable {
     private void handleMinimize() {
         Stage stage = (Stage) minimizeButton.getScene().getWindow();
         stage.setIconified(true);
+    }
+
+    @FXML
+    private void handleBack() {
+        try {
+            // Pomodoro penceresini kapat
+            pauseTimer(); // Zamanlayıcıyı durdur
+
+            // Ana menü sayfasını yükle
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/studybuddy/Menu.fxml"));
+            Parent menuRoot = loader.load();
+
+            // Mevcut pencereyi al
+            Stage currentStage = (Stage) backButton.getScene().getWindow();
+
+            // Yeni sayfayı ayarla
+            Scene menuScene = new Scene(menuRoot);
+            currentStage.setScene(menuScene);
+            currentStage.setTitle("Study Buddy - Menü");
+            currentStage.centerOnScreen();
+
+        } catch (Exception e) {
+            System.err.println("Menü sayfasına dönüş başarısız: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     @FXML

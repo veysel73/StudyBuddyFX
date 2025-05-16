@@ -32,7 +32,11 @@ public class PomodoroApplication extends Application {
             primaryStage.setScene(scene);
             primaryStage.setTitle("Pomodoro Timer");
             primaryStage.initStyle(StageStyle.UNDECORATED); // Removes default window decoration
-            primaryStage.setResizable(false);
+            primaryStage.setResizable(true);
+
+            // Tam ekran ayarı
+            primaryStage.setMaximized(true);
+
             primaryStage.show();
         } catch(Exception e) {
             e.printStackTrace();

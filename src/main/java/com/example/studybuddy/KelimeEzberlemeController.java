@@ -1,20 +1,22 @@
 package com.example.studybuddy;
 
-
-
-
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.*;
 
@@ -34,6 +36,10 @@ public class KelimeEzberlemeController {
     @FXML private Button sekizDkButton;
     @FXML private Button onBesDkButton;
     @FXML private Button yirmiDortSaatButton;
+    @FXML private Button geriDonButton;
+
+    // Stage referansı
+    private Stage stage;
 
     // Veri yapıları
     private ObservableList<FlashKart> tumKartlar;
@@ -41,6 +47,13 @@ public class KelimeEzberlemeController {
     private FlashKart guncelKart;
     private boolean onYuzGosteriliyor;
     private Timer tekrarZamanlayici;
+
+    /**
+     * Stage referansını ayarlar
+     */
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
 
     /**
      * FXML yüklendiğinde otomatik çağrılır
@@ -83,12 +96,46 @@ public class KelimeEzberlemeController {
             sonrakiKartiGoster();
         });
 
+        // Geri Dön butonu (FXML'de tanımlanacak)
+        if (geriDonButton != null) {
+            geriDonButton.setOnAction(this::geriDonButonTiklama);
+        }
 
         // Başlangıçta tekrar butonlarını gizle
         tekrarButtonBox.setVisible(false);
 
         // Zamanlayıcıyı başlat
         baslangicDurumunuAyarla();
+    }
+
+    /**
+     * Geri dön butonuna tıklandığında çağrılır
+     */
+    private void geriDonButonTiklama(ActionEvent event) {
+        // Buradaki kodu ana menüye dönmek için kullanabilirsiniz
+        try {
+            // Geçerli pencereyi kapat
+            if (stage != null) {
+                stage.close();
+            }
+
+            // Ana menüye gitmek için gereken kodu buraya yazabilirsiniz
+            // Örneğin:
+            /*
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/studybuddy/AnaMenu.fxml"));
+            Parent root = loader.load();
+            Stage anaMenuStage = new Stage();
+            anaMenuStage.setScene(new Scene(root));
+            anaMenuStage.setMaximized(true);
+            anaMenuStage.show();
+            */
+
+            // Şimdilik sadece uygulamayı kapatacak
+            Platform.exit();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -366,11 +413,8 @@ public class KelimeEzberlemeController {
         varsayilanKartlar.add(new FlashKart("watch", "izlemek/saat"));
         varsayilanKartlar.add(new FlashKart("extra", "ekstra"));
 
-        // ... toplamda 100 tane olacak şekilde buraya devam edebilirsin
-
         return varsayilanKartlar;
     }
-
 
     /**
      * Uygulama kapanırken kaynakları temizler

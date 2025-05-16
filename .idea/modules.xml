@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
+
       <module fileurl="file://$PROJECT_DIR$/.idea/StuddyBuddy.iml" filepath="$PROJECT_DIR$/.idea/StuddyBuddy.iml" />
 =======
-      <module fileurl="file://$PROJECT_DIR$/StudyBuddy.iml" filepath="$PROJECT_DIR$/StudyBuddy.iml" />
+
 >>>>>>> 8c23bc50e205450962bb03bd7cc063795a9d0407
     </modules>
   </component>
