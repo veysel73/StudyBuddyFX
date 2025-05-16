@@ -1,4 +1,22 @@
+<<<<<<< HEAD
 Tarih: 2025-05-15
 Icerik:
 zdxfghbbjhgfd
+=======
+Tarih: 2025-04-08
+Icerik:
+Her şey çok güzel olacak
+----------
+Tarih: 2025-04-20
+Icerik:
+sabırlı olun başaracağız :)
+----------
+Tarih: 2025-04-20
+Icerik:
+ne kadar dönersen dön götün arkadadır.
+----------
+Tarih: 2025-04-21
+Icerik:
+ftgyhujk
+>>>>>>> 8c23bc50e205450962bb03bd7cc063795a9d0407
 ----------
