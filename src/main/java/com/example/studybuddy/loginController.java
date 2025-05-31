@@ -139,12 +139,18 @@ public class loginController {
                 Scene menuScene = new Scene(menuRoot);
 
                 // Mevcut pencereyi al
+
                 Stage currentStage = (Stage) lblDurum.getScene().getWindow();
 
-                // Sahneyi ayarla ve göster
                 currentStage.setScene(menuScene);
                 currentStage.setTitle("Study Buddy - Menü");
-                currentStage.centerOnScreen(); // Pencereyi ortala
+                currentStage.setFullScreenExitKeyCombination(null); // ESC çıkış anahtarını kaldır
+                currentStage.setFullScreenExitHint("");             // Tam ekran çıkış ipucunu boş yap
+                currentStage.setFullScreen(true);                    // Tam ekran yap
+                currentStage.centerOnScreen();
+                currentStage.show();
+
+
 
             } catch (IOException e) {
                 lblDurum.setText("❌ Menü açılırken bir hata oluştu.");
@@ -222,4 +228,5 @@ public class loginController {
             }
         });
     }
+
 }

@@ -1,6 +1,5 @@
 package com.example.studybuddy;
 
-
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -17,40 +16,72 @@ import javafx.event.ActionEvent;
 
 public class AlanSecimController {
 
-    @FXML private Button backButton;
-    @FXML private Label titleLabel;
-    @FXML private VBox mainBox;
-    @FXML private VBox buttonBox;
-    @FXML private Button webButton;
-    @FXML private Button aiButton;
-    @FXML private Button cyberButton;
-    @FXML private Button gameButton;
-    @FXML private Button linkedinButton;
-    @FXML private Button exitButton;
-    @FXML private ScrollPane scrollPane;
-    @FXML private VBox contentBox;
+    // FXML ile bağlantılı bileşenler
+    @FXML private Button backButton; // İçerik sayfasındaki geri düğmesi
+    @FXML private Button mainBackButton; // Ana sayfadaki geri düğmesi
+    @FXML private Label titleLabel; // Başlık etiketi
+    @FXML private VBox mainBox; // Ana düzen kutusu
+    @FXML private VBox buttonBox; // Butonların bulunduğu kutu
+    @FXML private Button webButton; // Web geliştirme butonu
+    @FXML private Button aiButton; // Yapay zeka butonu
+    @FXML private Button cyberButton; // Siber güvenlik butonu
+    @FXML private Button gameButton; // Oyun geliştirme butonu
+    @FXML private Button linkedinButton; // LinkedIn butonu
+    @FXML private Button exitButton; // Çıkış butonu
+    @FXML private ScrollPane scrollPane; // Kaydırma paneli
+    @FXML private VBox contentBox; // İçerik kutusu
 
-    private String currentContentType = "";
+    private String currentContentType = ""; // Şu an gösterilen içerik türü
 
+    /**
+     * Controller başlatıldığında çalışan metod
+     */
     @FXML
     private void initialize() {
+        // ScrollPane ayarları
         scrollPane.setFitToWidth(true);
         scrollPane.setFitToHeight(true);
-        scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-        scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED);
+        scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER); // Yatay kaydırmayı kapat
+        scrollPane.setVbarPolicy(ScrollPane.ScrollBarPolicy.AS_NEEDED); // Dikey kaydırmayı aç
+
+        // Başlangıçta geri düğmelerini ayarla
+        backButton.setVisible(false); // İçerik geri düğmesini gizle
+        mainBackButton.setVisible(true); // Ana menü geri düğmesini göster
     }
 
+    /**
+     * Ana menüdeki geri düğmesi işlevi
+     */
+    @FXML
+    private void handleMainBack(ActionEvent event) {
+        // Önceki ekrana dönmek için stage'i kapat
+        Stage stage = (Stage) mainBackButton.getScene().getWindow();
+        stage.close();
+    }
+
+    /**
+     * İçerik sayfasındaki geri düğmesi işlevi
+     */
     @FXML
     private void handleBack(ActionEvent event) {
+        // Buton kutusunu göster
         buttonBox.setVisible(true);
         buttonBox.setManaged(true);
+
+        // ScrollPane'i gizle
         scrollPane.setVisible(false);
         scrollPane.setManaged(false);
+
+        // Geri düğmelerini ayarla
         backButton.setVisible(false);
+        mainBackButton.setVisible(true);
+
+        // Geçerli içerik türünü sıfırla
         currentContentType = "";
+
+        // Başlığı güncelle
         titleLabel.setText("🎯 Kariyer Geliştirme Yolu");
     }
-
 
     @FXML
     private void handleLinkedIn(ActionEvent event) {

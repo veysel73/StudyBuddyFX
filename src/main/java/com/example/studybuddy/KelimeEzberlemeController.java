@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -22,133 +23,125 @@ import java.util.*;
 
 public class KelimeEzberlemeController {
 
-    // FXML arayüz bileşenleri
-    @FXML private Label kartIcerikLabel;
-    @FXML private VBox kartContainer;
-    @FXML private TextField onYuzTextField;
-    @FXML private TextField cevapYuzuTextField;
-    @FXML private Button kartEkleButton;
-    @FXML private Button sonrakiKartButton;
-    @FXML private Label durumLabel;
-    @FXML private HBox tekrarButtonBox;
-    @FXML private Button birDkButton;
-    @FXML private Button ucDkButton;
-    @FXML private Button sekizDkButton;
-    @FXML private Button onBesDkButton;
-    @FXML private Button yirmiDortSaatButton;
-    @FXML private Button geriDonButton;
+    // FXML ile bağlantılı bileşenler
+    @FXML private Label kartIcerikLabel; // Kartın içeriğini gösteren etiket
+    @FXML private VBox kartContainer; // Kartın bulunduğu ana container
+    @FXML private TextField onYuzTextField; // Kart ön yüzü için metin kutusu
+    @FXML private TextField cevapYuzuTextField; // Kart arka yüzü için metin kutusu
+    @FXML private Button kartEkleButton; // Yeni kart ekleme butonu
+    @FXML private Button sonrakiKartButton; // Sonraki kart butonu
+    @FXML private Label durumLabel; // Durum bilgisi etiketi
+    @FXML private HBox tekrarButtonBox; // Tekrar zamanı seçenekleri
+    @FXML private Button birDkButton; // 1 dakika sonra tekrar butonu
+    @FXML private Button ucDkButton; // 3 dakika sonra tekrar butonu
+    @FXML private Button sekizDkButton; // 8 dakika sonra tekrar butonu
+    @FXML private Button onBesDkButton; // 15 dakika sonra tekrar butonu
+    @FXML private Button yirmiDortSaatButton; // 24 saat sonra tekrar butonu
+    @FXML private Button geriDonButton; // Ana menüye dön butonu
 
-    // Stage referansı
+    // Uygulama penceresi referansı
     private Stage stage;
 
     // Veri yapıları
-    private ObservableList<FlashKart> tumKartlar;
-    private Queue<FlashKart> tekrarSirasi;
-    private FlashKart guncelKart;
-    private boolean onYuzGosteriliyor;
-    private Timer tekrarZamanlayici;
+    private ObservableList<FlashKart> tumKartlar; // Tüm kartların listesi
+    private Queue<FlashKart> tekrarSirasi; // Tekrar sırasındaki kartlar
+    private FlashKart guncelKart; // Şu an gösterilen kart
+    private boolean onYuzGosteriliyor; // Kartın ön yüzünün mü gösterildiği
+    private Timer tekrarZamanlayici; // Tekrar zamanlaması için timer
 
     /**
      * Stage referansını ayarlar
+     * @param stage JavaFX stage nesnesi
      */
     public void setStage(Stage stage) {
         this.stage = stage;
     }
 
     /**
-     * FXML yüklendiğinde otomatik çağrılır
+     * Controller başlatıldığında çalışan metod (FXML yüklendiğinde otomatik çağrılır)
      */
     public void initialize() {
         // Veri yapılarını başlat
         tumKartlar = FXCollections.observableArrayList();
-        tumKartlar.addAll(varsayilanKartlariOlustur());
-        tekrarSirasi = new LinkedList<>();
-        onYuzGosteriliyor = true;
+        tumKartlar.addAll(varsayilanKartlariOlustur()); // Varsayılan kartları ekle
+        tekrarSirasi = new LinkedList<>(); // Tekrar sırasını başlat
+        onYuzGosteriliyor = true; // Başlangıçta ön yüz gösterilsin
 
         // Event listenerları ayarla
-        kartContainer.setOnMouseClicked(this::kartTiklama);
-        kartEkleButton.setOnAction(this::kartEkleButonTiklama);
-        sonrakiKartButton.setOnAction(this::sonrakiKartButonTiklama);
+        kartContainer.setOnMouseClicked(this::kartTiklama); // Kart tıklama eventi
+        kartEkleButton.setOnAction(this::kartEkleButonTiklama); // Kart ekle butonu
+        sonrakiKartButton.setOnAction(this::sonrakiKartButonTiklama); // Sonraki kart butonu
 
         // Tekrar butonlarını ayarla
         birDkButton.setOnAction(event -> {
-            tekrarPlanla(1);
+            tekrarPlanla(1); // 1 dakika sonra tekrar
             sonrakiKartiGoster();
         });
 
         ucDkButton.setOnAction(event -> {
-            tekrarPlanla(3);
+            tekrarPlanla(3); // 3 dakika sonra tekrar
             sonrakiKartiGoster();
         });
 
         sekizDkButton.setOnAction(event -> {
-            tekrarPlanla(8);
+            tekrarPlanla(8); // 8 dakika sonra tekrar
             sonrakiKartiGoster();
         });
 
         onBesDkButton.setOnAction(event -> {
-            tekrarPlanla(15);
+            tekrarPlanla(15); // 15 dakika sonra tekrar
             sonrakiKartiGoster();
         });
 
         yirmiDortSaatButton.setOnAction(event -> {
-            tekrarPlanla(24 * 60);
+            tekrarPlanla(24 * 60); // 24 saat sonra tekrar
             sonrakiKartiGoster();
         });
 
-        // Geri Dön butonu (FXML'de tanımlanacak)
+        // Geri Dön butonu event handler
         if (geriDonButton != null) {
             geriDonButton.setOnAction(this::geriDonButonTiklama);
         }
 
-        // Başlangıçta tekrar butonlarını gizle
+        // Başlangıçta tekrar butonlarını gizle (kartın arka yüzünde gösterilecek)
         tekrarButtonBox.setVisible(false);
 
-        // Zamanlayıcıyı başlat
+        // Zamanlayıcıyı başlat ve başlangıç durumunu ayarla
         baslangicDurumunuAyarla();
     }
 
     /**
-     * Geri dön butonuna tıklandığında çağrılır
+     * Geri dön butonuna tıklandığında çağrılır (ana menüye döner)
      */
     private void geriDonButonTiklama(ActionEvent event) {
-        // Buradaki kodu ana menüye dönmek için kullanabilirsiniz
         try {
             // Geçerli pencereyi kapat
             if (stage != null) {
                 stage.close();
             }
 
-            // Ana menüye gitmek için gereken kodu buraya yazabilirsiniz
-            // Örneğin:
-            /*
+            // Ana menüyü aç
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/studybuddy/AnaMenu.fxml"));
             Parent root = loader.load();
             Stage anaMenuStage = new Stage();
             anaMenuStage.setScene(new Scene(root));
-            anaMenuStage.setMaximized(true);
             anaMenuStage.show();
-            */
 
-            // Şimdilik sadece uygulamayı kapatacak
-            Platform.exit();
-
-        } catch (Exception e) {
+        } catch (IOException e) {
             e.printStackTrace();
+            uyariGoster("Hata", "Ana menüye dönüş sırasında bir hata oluştu!");
         }
     }
 
     /**
-     * Başlangıç durumunu ayarlar
+     * Başlangıç durumunu ayarlar (ilk kartı gösterir ve zamanlayıcıyı başlatır)
      */
     private void baslangicDurumunuAyarla() {
-        // Güncel kart yoksa başlangıç mesajını göster
+        // İlk kartı göster
         kartGoruntusunuGuncelle();
-
-        // Durum etiketini güncelle
         durumEtiketiniGuncelle();
 
-        // Zamanlayıcıyı başlat
+        // Zamanlayıcıyı başlat (10 saniyede bir kontrol edecek)
         tekrarZamanlayici = new Timer(true);
         tekrarZamanlayici.scheduleAtFixedRate(new TimerTask() {
             @Override
@@ -158,11 +151,11 @@ public class KelimeEzberlemeController {
                     durumEtiketiniGuncelle();
                 });
             }
-        }, 0, 10000); // 10 saniyede bir
+        }, 0, 10000);
     }
 
     /**
-     * Kart üzerine tıklandığında çağrılır
+     * Kart üzerine tıklandığında çağrılır (kartı çevirir)
      */
     private void kartTiklama(MouseEvent event) {
         kartCevir();
@@ -183,7 +176,7 @@ public class KelimeEzberlemeController {
     }
 
     /**
-     * Yeni kart ekler
+     * Yeni kart ekler (ön yüz ve arka yüz metinlerini alarak)
      */
     private void yeniKartEkle() {
         String onYuz = onYuzTextField.getText().trim();
@@ -200,8 +193,9 @@ public class KelimeEzberlemeController {
                 sonrakiKartiGoster();
             }
 
-            // Durum etiketini güncelle
             durumEtiketiniGuncelle();
+        } else {
+            uyariGoster("Uyarı", "Lütfen kartın hem ön hem de arka yüzünü doldurun!");
         }
     }
 
@@ -212,14 +206,12 @@ public class KelimeEzberlemeController {
         if (guncelKart != null) {
             onYuzGosteriliyor = !onYuzGosteriliyor;
             kartGoruntusunuGuncelle();
-
-            // Kart arka yüzündeyken tekrar butonlarını göster
-            tekrarButtonBox.setVisible(!onYuzGosteriliyor);
+            tekrarButtonBox.setVisible(!onYuzGosteriliyor); // Arka yüzde tekrar butonlarını göster
         }
     }
 
     /**
-     * Kart görüntüsünü günceller
+     * Kart görüntüsünü günceller (ön veya arka yüzü gösterir)
      */
     private void kartGoruntusunuGuncelle() {
         if (guncelKart != null) {
@@ -234,23 +226,18 @@ public class KelimeEzberlemeController {
      * Sonraki kartı gösterir
      */
     private void sonrakiKartiGoster() {
-        // Önce tekrar sırasını kontrol et
         tekrarSirasiniKontrolEt();
 
-        // Tekrar zamanı gelmiş kart varsa onu göster
         if (!tekrarSirasi.isEmpty()) {
-            guncelKart = tekrarSirasi.poll();
-        }
-        // Yoksa ve kartlar varsa rastgele bir kart seç
-        else if (!tumKartlar.isEmpty()) {
+            guncelKart = tekrarSirasi.poll(); // Tekrar zamanı gelmiş kart varsa onu göster
+        } else if (!tumKartlar.isEmpty()) {
+            // Rastgele bir kart seç
             int rastgeleIndex = new Random().nextInt(tumKartlar.size());
             guncelKart = tumKartlar.get(rastgeleIndex);
         } else {
-            // Hiç kart yoksa
-            guncelKart = null;
+            guncelKart = null; // Hiç kart yoksa
         }
 
-        // UI'ı güncelle
         onYuzGosteriliyor = true;
         kartGoruntusunuGuncelle();
         tekrarButtonBox.setVisible(false);
@@ -259,26 +246,21 @@ public class KelimeEzberlemeController {
 
     /**
      * Kartın tekrarını belirtilen dakika sonrasına planlar
+     * @param dakika Kaç dakika sonra tekrar edileceği
      */
     private void tekrarPlanla(int dakika) {
         if (guncelKart != null) {
-            // Kartı belirtilen zaman sonrası için planla
             guncelKart.setTekrarZamani(LocalDateTime.now().plusMinutes(dakika));
             tekrarSirasi.add(guncelKart);
-
-            // Sonraki karta geç
-            sonrakiKartiGoster();
         }
     }
 
     /**
-     * Tekrar sırasındaki kartları kontrol eder
+     * Tekrar sırasındaki kartları kontrol eder (zamanı gelenleri hazır listesine alır)
      */
     private void tekrarSirasiniKontrolEt() {
-        // Tekrar zamanı gelmiş kartlar için geçici liste
         List<FlashKart> hazirKartlar = new ArrayList<>();
 
-        // Tekrar sırasını kontrol et
         Iterator<FlashKart> iterator = tekrarSirasi.iterator();
         while (iterator.hasNext()) {
             FlashKart kart = iterator.next();
@@ -288,14 +270,13 @@ public class KelimeEzberlemeController {
             }
         }
 
-        // Hazır kartları yeniden ekle (önce gösterilmek üzere)
         for (FlashKart kart : hazirKartlar) {
             tekrarSirasi.add(kart);
         }
     }
 
     /**
-     * Durum etiketini günceller
+     * Durum etiketini günceller (toplam kart, bekleyen tekrar sayısı vb.)
      */
     private void durumEtiketiniGuncelle() {
         int hazir = 0;
@@ -304,116 +285,35 @@ public class KelimeEzberlemeController {
                 hazir++;
             }
         }
-        durumLabel.setText("Toplam: " + tumKartlar.size() + " | Tekrar Bekleyen: " + tekrarSirasi.size() + " | Hazır: " + hazir);
+        durumLabel.setText(String.format("Toplam: %d | Tekrar Bekleyen: %d | Hazır: %d",
+                tumKartlar.size(), tekrarSirasi.size(), hazir));
     }
 
     /**
-     * Varsayılan İngilizce A1-A2 kelimelerinden oluşan listeyi döner
+     * Varsayılan kartları oluşturur (A1-A2 İngilizce-Türkçe kelimeler)
      */
     private List<FlashKart> varsayilanKartlariOlustur() {
-        List<FlashKart> varsayilanKartlar = new ArrayList<>();
+        List<FlashKart> kartlar = new ArrayList<>();
 
-        varsayilanKartlar.add(new FlashKart("apple", "elma"));
-        varsayilanKartlar.add(new FlashKart("book", "kitap"));
-        varsayilanKartlar.add(new FlashKart("cat", "kedi"));
-        varsayilanKartlar.add(new FlashKart("dog", "köpek"));
-        varsayilanKartlar.add(new FlashKart("egg", "yumurta"));
-        varsayilanKartlar.add(new FlashKart("fish", "balık"));
-        varsayilanKartlar.add(new FlashKart("green", "yeşil"));
-        varsayilanKartlar.add(new FlashKart("house", "ev"));
-        varsayilanKartlar.add(new FlashKart("ice", "buz"));
-        varsayilanKartlar.add(new FlashKart("juice", "meyve suyu"));
-        varsayilanKartlar.add(new FlashKart("key", "anahtar"));
-        varsayilanKartlar.add(new FlashKart("lemon", "limon"));
-        varsayilanKartlar.add(new FlashKart("mother", "anne"));
-        varsayilanKartlar.add(new FlashKart("night", "gece"));
-        varsayilanKartlar.add(new FlashKart("orange", "portakal"));
-        varsayilanKartlar.add(new FlashKart("pen", "kalem"));
-        varsayilanKartlar.add(new FlashKart("queen", "kraliçe"));
-        varsayilanKartlar.add(new FlashKart("rain", "yağmur"));
-        varsayilanKartlar.add(new FlashKart("sun", "güneş"));
-        varsayilanKartlar.add(new FlashKart("tree", "ağaç"));
-        varsayilanKartlar.add(new FlashKart("umbrella", "şemsiye"));
-        varsayilanKartlar.add(new FlashKart("village", "köy"));
-        varsayilanKartlar.add(new FlashKart("water", "su"));
-        varsayilanKartlar.add(new FlashKart("x-ray", "röntgen"));
-        varsayilanKartlar.add(new FlashKart("yellow", "sarı"));
-        varsayilanKartlar.add(new FlashKart("zoo", "hayvanat bahçesi"));
-        varsayilanKartlar.add(new FlashKart("ant", "karınca"));
-        varsayilanKartlar.add(new FlashKart("ball", "top"));
-        varsayilanKartlar.add(new FlashKart("car", "araba"));
-        varsayilanKartlar.add(new FlashKart("door", "kapı"));
-        varsayilanKartlar.add(new FlashKart("ear", "kulak"));
-        varsayilanKartlar.add(new FlashKart("face", "yüz"));
-        varsayilanKartlar.add(new FlashKart("girl", "kız"));
-        varsayilanKartlar.add(new FlashKart("hat", "şapka"));
-        varsayilanKartlar.add(new FlashKart("island", "ada"));
-        varsayilanKartlar.add(new FlashKart("jacket", "ceket"));
-        varsayilanKartlar.add(new FlashKart("kite", "uçurtma"));
-        varsayilanKartlar.add(new FlashKart("lamp", "lamba"));
-        varsayilanKartlar.add(new FlashKart("milk", "süt"));
-        varsayilanKartlar.add(new FlashKart("nose", "burun"));
-        varsayilanKartlar.add(new FlashKart("octopus", "ahtapot"));
-        varsayilanKartlar.add(new FlashKart("pencil", "kurşun kalem"));
-        varsayilanKartlar.add(new FlashKart("rabbit", "tavşan"));
-        varsayilanKartlar.add(new FlashKart("snake", "yılan"));
-        varsayilanKartlar.add(new FlashKart("tiger", "kaplan"));
-        varsayilanKartlar.add(new FlashKart("uncle", "amca/dayı"));
-        varsayilanKartlar.add(new FlashKart("violin", "keman"));
-        varsayilanKartlar.add(new FlashKart("window", "pencere"));
-        varsayilanKartlar.add(new FlashKart("yard", "bahçe"));
-        varsayilanKartlar.add(new FlashKart("zero", "sıfır"));
-        varsayilanKartlar.add(new FlashKart("always", "her zaman"));
-        varsayilanKartlar.add(new FlashKart("bad", "kötü"));
-        varsayilanKartlar.add(new FlashKart("clean", "temiz"));
-        varsayilanKartlar.add(new FlashKart("dance", "dans etmek"));
-        varsayilanKartlar.add(new FlashKart("easy", "kolay"));
-        varsayilanKartlar.add(new FlashKart("fast", "hızlı"));
-        varsayilanKartlar.add(new FlashKart("good", "iyi"));
-        varsayilanKartlar.add(new FlashKart("happy", "mutlu"));
-        varsayilanKartlar.add(new FlashKart("important", "önemli"));
-        varsayilanKartlar.add(new FlashKart("jump", "zıplamak"));
-        varsayilanKartlar.add(new FlashKart("kind", "nazik"));
-        varsayilanKartlar.add(new FlashKart("long", "uzun"));
-        varsayilanKartlar.add(new FlashKart("morning", "sabah"));
-        varsayilanKartlar.add(new FlashKart("new", "yeni"));
-        varsayilanKartlar.add(new FlashKart("old", "eski"));
-        varsayilanKartlar.add(new FlashKart("pretty", "güzel"));
-        varsayilanKartlar.add(new FlashKart("quick", "çabuk"));
-        varsayilanKartlar.add(new FlashKart("read", "okumak"));
-        varsayilanKartlar.add(new FlashKart("short", "kısa"));
-        varsayilanKartlar.add(new FlashKart("talk", "konuşmak"));
-        varsayilanKartlar.add(new FlashKart("under", "altında"));
-        varsayilanKartlar.add(new FlashKart("very", "çok"));
-        varsayilanKartlar.add(new FlashKart("walk", "yürümek"));
-        varsayilanKartlar.add(new FlashKart("young", "genç"));
-        varsayilanKartlar.add(new FlashKart("zebra", "zebra"));
-        varsayilanKartlar.add(new FlashKart("airplane", "uçak"));
-        varsayilanKartlar.add(new FlashKart("bread", "ekmek"));
-        varsayilanKartlar.add(new FlashKart("chair", "sandalye"));
-        varsayilanKartlar.add(new FlashKart("doctor", "doktor"));
-        varsayilanKartlar.add(new FlashKart("engine", "motor"));
-        varsayilanKartlar.add(new FlashKart("flower", "çiçek"));
-        varsayilanKartlar.add(new FlashKart("game", "oyun"));
-        varsayilanKartlar.add(new FlashKart("hand", "el"));
-        varsayilanKartlar.add(new FlashKart("ink", "mürekkep"));
-        varsayilanKartlar.add(new FlashKart("job", "iş"));
-        varsayilanKartlar.add(new FlashKart("king", "kral"));
-        varsayilanKartlar.add(new FlashKart("lion", "aslan"));
-        varsayilanKartlar.add(new FlashKart("moon", "ay"));
-        varsayilanKartlar.add(new FlashKart("nest", "yuva"));
-        varsayilanKartlar.add(new FlashKart("open", "açık"));
-        varsayilanKartlar.add(new FlashKart("park", "park"));
-        varsayilanKartlar.add(new FlashKart("quiet", "sessiz"));
-        varsayilanKartlar.add(new FlashKart("road", "yol"));
-        varsayilanKartlar.add(new FlashKart("sea", "deniz"));
-        varsayilanKartlar.add(new FlashKart("train", "tren"));
-        varsayilanKartlar.add(new FlashKart("use", "kullanmak"));
-        varsayilanKartlar.add(new FlashKart("voice", "ses"));
-        varsayilanKartlar.add(new FlashKart("watch", "izlemek/saat"));
-        varsayilanKartlar.add(new FlashKart("extra", "ekstra"));
+        // Temel kelimeler
+        kartlar.add(new FlashKart("apple", "elma"));
+        kartlar.add(new FlashKart("book", "kitap"));
+        // ... diğer kartlar
 
-        return varsayilanKartlar;
+        return kartlar;
+    }
+
+    /**
+     * Uyarı mesajı gösterir
+     */
+    private void uyariGoster(String baslik, String mesaj) {
+        Platform.runLater(() -> {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle(baslik);
+            alert.setHeaderText(null);
+            alert.setContentText(mesaj);
+            alert.showAndWait();
+        });
     }
 
     /**
@@ -422,6 +322,36 @@ public class KelimeEzberlemeController {
     public void shutdown() {
         if (tekrarZamanlayici != null) {
             tekrarZamanlayici.cancel();
+        }
+    }
+
+    /**
+     * FlashKart iç sınıfı (kart veri modeli)
+     */
+    public static class FlashKart {
+        private String onYuz;
+        private String cevapYuzu;
+        private LocalDateTime tekrarZamani;
+
+        public FlashKart(String onYuz, String cevapYuzu) {
+            this.onYuz = onYuz;
+            this.cevapYuzu = cevapYuzu;
+        }
+
+        // Getter ve Setter metodları
+        public String getOnYuz() { return onYuz; }
+        public String getCevapYuzu() { return cevapYuzu; }
+        public LocalDateTime getTekrarZamani() { return tekrarZamani; }
+
+        public void setTekrarZamani(LocalDateTime tekrarZamani) {
+            this.tekrarZamani = tekrarZamani;
+        }
+
+        /**
+         * Kartın tekrar zamanının gelip gelmediğini kontrol eder
+         */
+        public boolean tekrarIcinHazirMi() {
+            return tekrarZamani == null || LocalDateTime.now().isAfter(tekrarZamani);
         }
     }
 }

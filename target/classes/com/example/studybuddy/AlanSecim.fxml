@@ -11,6 +11,7 @@
 
     <top>
         <HBox spacing="10" style="-fx-padding: 15; -fx-alignment: center-left;">
+            <Button fx:id="mainBackButton" onAction="#handleMainBack" styleClass="back-button" text="⬅️ Ana Menü" textFill="#101010" />
             <Button fx:id="backButton" onAction="#handleBack" styleClass="back-button" text="⬅️ Geri Dön" visible="false" />
             <Label fx:id="titleLabel" styleClass="title-label" text="🎯 Kariyer Geliştirme Yolu" />
         </HBox>
@@ -24,10 +25,9 @@
                 <Button fx:id="cyberButton" onAction="#handleCyberSecurity" styleClass="menu-button" text="🛡️ Siber Güvenlik" />
                 <Button fx:id="gameButton" onAction="#handleGameDev" styleClass="menu-button" text="🎮 Oyun Geliştirme" />
                 <Button fx:id="linkedinButton" onAction="#handleLinkedIn" styleClass="menu-button" text="🔗 LinkedIn Profil Oluşturma" />
-                <Button fx:id="exitButton" onAction="#handleExit" styleClass="exit-button" text="Çıkış" />
             </VBox>
 
-            <ScrollPane fx:id="scrollPane" fitToWidth="true" fitToHeight="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" styleClass="content-scroll" visible="false">
+            <ScrollPane fx:id="scrollPane" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" styleClass="content-scroll" vbarPolicy="AS_NEEDED" visible="false">
                 <VBox fx:id="contentBox" style="-fx-padding: 20;" />
             </ScrollPane>
         </VBox>

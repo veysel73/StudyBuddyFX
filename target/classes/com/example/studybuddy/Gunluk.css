@@ -167,3 +167,8 @@
 .button, .gunluk-list .list-cell, .gunluk-textarea, .date-picker {
     -fx-transition: all 0.15s ease-out;
 }
+#btnGeriDon {
+    -fx-background-color: #4a90e2;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}

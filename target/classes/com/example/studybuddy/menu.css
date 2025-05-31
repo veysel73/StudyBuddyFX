@@ -1,5 +1,6 @@
 /* ANA BUTONLAR (Pomodoro, To-Do List, İngilizce Kelime) */
-#btn1 {
+/* btn1 ile aynı stil (Pomodoro + btn1) */
+#btn1, #pomodoroButton {
     -fx-background-color: linear-gradient(to bottom right, #FF416C, #FF4B2B);
     -fx-text-fill: white;
     -fx-background-radius: 15;
@@ -10,7 +11,8 @@
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0.5, 0, 1);
 }
 
-#btn2 {
+/* btn2 ile aynı stil (To-Do List + btn2) */
+#btn2, #todoListButton {
     -fx-background-color: linear-gradient(to bottom right, #4776E6, #8E54E9);
     -fx-text-fill: white;
     -fx-background-radius: 15;
@@ -21,7 +23,8 @@
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0.5, 0, 1);
 }
 
-#btn3 {
+/* btn3 ile aynı stil (İngilizce Kelime + btn3) */
+#btn3, #kelimeEzberlemeButton {
     -fx-background-color: linear-gradient(to bottom right, #00B09B, #96C93D);
     -fx-text-fill: white;
     -fx-background-radius: 15;
@@ -89,4 +92,47 @@
     -fx-text-fill: #616161;
     -fx-effect: none;
     -fx-border-color: #E0E0E0;
+}
+#btn4 {
+    -fx-background-color: linear-gradient(to bottom right, #2193b0, #6dd5ed);
+    -fx-text-fill: white;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-border-width: 2;
+    -fx-border-color: white;
+    -fx-font-size: 14px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0.5, 0, 1);
+}
+
+#btn5 {
+    -fx-background-color: linear-gradient(to bottom right, #fc4a1a, #f7b733);
+    -fx-text-fill: white;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-border-width: 2;
+    -fx-border-color: white;
+    -fx-font-size: 14px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0.5, 0, 1);
+}
+
+#btn6 {
+    -fx-background-color: linear-gradient(to bottom right, #1f4037, #99f2c8);
+    -fx-text-fill: white;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-border-width: 2;
+    -fx-border-color: white;
+    -fx-font-size: 14px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0.5, 0, 1);
+}
+
+#btn7 {
+    -fx-background-color: linear-gradient(to bottom right, #ff9966, #ff5e62);
+    -fx-text-fill: white;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+    -fx-border-width: 2;
+    -fx-border-color: white;
+    -fx-font-size: 14px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0.5, 0, 1);
 }

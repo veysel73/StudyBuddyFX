@@ -1,53 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studybuddy.GunlukController">
-    <stylesheets>
-        <URL value="@Gunluk.css" />
-    </stylesheets>
+<StackPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studybuddy.GunlukController">
 
-    <HBox alignment="CENTER_LEFT" spacing="10" styleClass="header">
-        <Label styleClass="title" text="Günlüklerim" />
-    </HBox>
+    <!-- Ana Panel - Günlük Listesi -->
+    <VBox fx:id="gunlukListePanel" spacing="10">
+        <padding>
+            <Insets bottom="20" left="20" right="20" top="20" />
+        </padding>
 
-    <VBox fx:id="gunlukListePanel" prefHeight="385.0" prefWidth="596.0" spacing="10" styleClass="panel">
+        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Günlük Listesi" />
+
+        <Button fx:id="btnAnaMenu" onAction="#anaMenuyeDon" style="-fx-font-weight: bold;" text=" ⬅️Ana Menü" />
+
         <HBox alignment="CENTER_LEFT" spacing="10">
-            <DatePicker fx:id="dateAramaPicker" styleClass="date-picker" />
-            <Button onAction="#tarihIleAra" styleClass="action-button" text="Tarih ile Ara" />
+            <DatePicker fx:id="dateAramaPicker" />
+            <Button fx:id="btnTarihAra" onAction="#tarihIleAra" style="-fx-font-weight: bold;" text="Tarihle Ara" />
         </HBox>
 
-        <HBox alignment="CENTER_RIGHT" spacing="10">
-            <Button fx:id="btnYeniGunluk" onAction="#yeniGunlukEkle" styleClass="primary-button" text="Yeni Günlük Ekle" />
-        </HBox>
+        <ListView fx:id="listViewGunlukler" prefHeight="300" />
 
-        <ListView fx:id="listViewGunlukler" prefHeight="241.0" prefWidth="554.0" styleClass="gunluk-list" />
-
-        <HBox alignment="CENTER_RIGHT" prefHeight="57.0" prefWidth="558.0" spacing="10">
-            <Button onAction="#gunlukOku" styleClass="action-button" text="Oku" />
-            <Button onAction="#gunlukSil" styleClass="danger-button" text="Sil" />
+        <HBox alignment="CENTER" spacing="10">
+            <Button fx:id="btnYeniGunluk" onAction="#yeniGunlukEkle" style="-fx-font-weight: bold; -fx-background-color: #4CAF50; -fx-text-fill: white;" text="Yeni Günlük" />
+            <Button onAction="#gunlukOku" style="-fx-font-weight: bold; -fx-background-color: #2196F3; -fx-text-fill: white;" text="Oku" />
+            <Button onAction="#gunlukSil" style="-fx-font-weight: bold; -fx-background-color: #f44336; -fx-text-fill: white;" text="Sil" />
         </HBox>
     </VBox>
 
-    <VBox fx:id="gunlukYazmaPanel" prefHeight="402.0" prefWidth="596.0" spacing="10" styleClass="panel">
+    <!-- Günlük Yazma Paneli -->
+    <VBox fx:id="gunlukYazmaPanel" spacing="15" visible="false">
+        <padding>
+            <Insets bottom="20" left="20" right="20" top="20" />
+        </padding>
+
+        <Button fx:id="btnGeriDon" onAction="#geriDon" style="-fx-font-weight: bold; -fx-alignment: CENTER_LEFT;" text="← Geri Dön" />
+
+        <Label style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Günlük Yaz" />
+
         <HBox alignment="CENTER_LEFT" spacing="10">
-            <Label styleClass="label" text="Tarih:" />
-            <DatePicker fx:id="datePicker" styleClass="date-picker" />
+            <Label style="-fx-font-weight: bold;" text="Tarih:" />
+            <DatePicker fx:id="datePicker" />
         </HBox>
 
-        <Label styleClass="label" text="Günlük İçeriği:" />
-        <TextArea fx:id="txtGunlukIcerik" prefHeight="272.0" prefWidth="554.0" styleClass="gunluk-textarea" wrapText="true" />
+        <TextArea fx:id="txtGunlukIcerik" prefRowCount="10" promptText="Bugün neler hissettiniz? Neler yaşadınız?" style="-fx-font-family: 'Arial'; -fx-font-size: 14px;" />
 
-        <HBox alignment="CENTER_RIGHT" spacing="10">
-            <Button onAction="#anaMenuyeDon" styleClass="secondary-button" text="Vazgeç" />
-            <Button onAction="#gunlukKaydet" styleClass="primary-button" text="Kaydet" />
-        </HBox>
+        <Button fx:id="btnKaydet" onAction="#gunlukKaydet" style="-fx-font-weight: bold; -fx-background-color: #4CAF50; -fx-text-fill: white;" text="Kaydet" />
     </VBox>
-</VBox>
+
+</StackPane>

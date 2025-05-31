@@ -1,6 +1,12 @@
 package com.example.studybuddy;
-
-
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.stage.Stage;
+import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
@@ -10,7 +16,7 @@ public class NotHesaplayiciController {
     @FXML private TextField vizeYuzdeInput;
     @FXML private TextField finalYuzdeInput;
     @FXML private TextField odevYuzdeInput;
-
+    @FXML private Button btnAnaMenu;
     @FXML private TextField vizeInput;
     @FXML private TextField finalInput;
     @FXML private TextField butunlemeInput;
@@ -19,8 +25,28 @@ public class NotHesaplayiciController {
     @FXML private Label sonucLabel;
     @FXML private Label hataLabel;
     @FXML private Label bilgiLabel;
-
-
+    /**
+     * Ana menüye dön butonu işlevi
+     */
+    @FXML
+    private void anaMenuyeDon() {
+        // Stage'i kapatarak önceki ekrana döner
+        Stage stage = (Stage) btnAnaMenu.getScene().getWindow();
+        stage.close();
+    }
+    @FXML
+    private void handleGeriDon(ActionEvent event) {
+        try {
+            // Ana menüye dönmek için
+            Parent root = FXMLLoader.load(getClass().getResource("AnaMenu.fxml"));
+            Stage stage = (Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("Ana menü FXML dosyası yüklenemedi!");
+        }
+    }
     @FXML
     private void hesapla() {
         try {

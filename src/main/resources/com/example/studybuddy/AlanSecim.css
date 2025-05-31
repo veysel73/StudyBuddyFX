@@ -26,10 +26,8 @@
 }
 
 .back-button {
-    -fx-font-size: 16px;
-    -fx-background-color: #95a5a6;
-    -fx-text-fill: white;
-    -fx-background-radius: 5;
+  -fx-font-weight: bold;
+     -fx-text-fill: #000000;
 }
 
 .back-button:hover {
@@ -75,4 +73,27 @@
 /* Kaydırma çubuğu arkaplanı (track) */
 .scroll-bar:vertical .track {
     -fx-background-color: #f0f0f0; /* Açık gri arkaplan */
+}.back-button {
+     -fx-font-size: 14px;
+     -fx-font-weight: bold;
+     -fx-background-color: #f0f0f0;
+     -fx-border-radius: 5px;
+     -fx-background-radius: 5px;
+     -fx-padding: 5 10 5 10;
+     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 1);
+ }
+
+ .back-button:hover {
+     -fx-background-color: #e0e0e0;
+     -fx-cursor: hand;
+ }
+#btnGeriDon {
+    -fx-background-color: #4a90e2;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+/* Sadece kalın yazı stili */
+#mainBackButton {
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000; /* Siyah renk */
 }

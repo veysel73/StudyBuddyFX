@@ -74,4 +74,20 @@
     -fx-font-size: 14px;
     -fx-text-fill: #3498db;
     -fx-alignment: CENTER;
-}
+}/* Geri dön butonu stili */
+ .back-button {
+     -fx-background-color: #4CAF50; /* Yeşil arkaplan */
+     -fx-text-fill: white; /* Beyaz yazı rengi */
+     -fx-font-weight: bold;
+     -fx-padding: 8px 16px;
+     -fx-border-radius: 4px;
+     -fx-cursor: hand;
+ }
+
+ .back-button:hover {
+     -fx-background-color: #45a049; /* Hover durumunda koyu yeşil */
+ }
+
+ .back-button:pressed {
+     -fx-background-color: #3e8e41; /* Basılı durumda daha koyu yeşil */
+ }

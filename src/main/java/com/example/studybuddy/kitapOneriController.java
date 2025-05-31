@@ -2,6 +2,7 @@ package com.example.studybuddy;
 
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -10,6 +11,7 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.stage.Stage;
 
 public class kitapOneriController {
     @FXML
@@ -17,6 +19,17 @@ public class kitapOneriController {
     @FXML
     private VBox kitapContainer;
 
+    @FXML private Button btnAnaMenu;
+
+    /**
+     * Ana menüye dön butonu işlevi
+     */
+    @FXML
+    private void anaMenuyeDon() {
+        // Stage'i kapatarak önceki ekrana döner
+        Stage stage = (Stage) btnAnaMenu.getScene().getWindow();
+        stage.close();
+    }
     @FXML
     public void initialize() {
         kitapEkle("1. İki Şehrin Hikayesi – Charles Dickens",
