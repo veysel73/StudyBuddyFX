@@ -1,6 +1,0 @@
-# Java build
-/target/
-
-# IntelliJ
-.idea/
-*.iml
