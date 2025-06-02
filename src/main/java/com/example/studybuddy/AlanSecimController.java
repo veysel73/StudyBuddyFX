@@ -1,6 +1,10 @@
 package com.example.studybuddy;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -13,6 +17,8 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.paint.Color;
 import javafx.geometry.Insets;
 import javafx.event.ActionEvent;
+
+import java.io.IOException;
 
 public class AlanSecimController {
 
@@ -54,9 +60,18 @@ public class AlanSecimController {
      */
     @FXML
     private void handleMainBack(ActionEvent event) {
-        // Önceki ekrana dönmek için stage'i kapat
-        Stage stage = (Stage) mainBackButton.getScene().getWindow();
-        stage.close();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/com/example/studybuddy/Menu.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setFullScreen(true);  // Tam ekran yapar
+            stage.setMaximized(true);  // Maksimize eder (opsiyonel)
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     /**

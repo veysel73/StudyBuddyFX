@@ -2,6 +2,7 @@ package com.example.studybuddy;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -29,10 +30,19 @@ public class NotHesaplayiciController {
      * Ana menüye dön butonu işlevi
      */
     @FXML
-    private void anaMenuyeDon() {
-        // Stage'i kapatarak önceki ekrana döner
-        Stage stage = (Stage) btnAnaMenu.getScene().getWindow();
-        stage.close();
+    private void anaMenuyeDon(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/com/example/studybuddy/Menu.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setFullScreen(true);  // Tam ekran yapar
+            stage.setMaximized(true);  // Maksimize eder (opsiyonel)
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
     @FXML
     private void handleGeriDon(ActionEvent event) {

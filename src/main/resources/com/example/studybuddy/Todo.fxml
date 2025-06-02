@@ -12,9 +12,24 @@
 <?import javafx.scene.text.Font?>
 
 <BorderPane stylesheets="@Todo.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.studybuddy.ToDoController">
+
     <top>
         <VBox spacing="15.0" styleClass="header-box" BorderPane.alignment="CENTER">
             <children>
+                <!-- Geri butonu eklendi -->
+                <HBox alignment="TOP_LEFT">
+                    <children>
+                        <Button fx:id="backButton" mnemonicParsing="false" text="Geri" onAction="#goBackToMainMenu" styleClass="back-button">
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                        </Button>
+                    </children>
+                    <padding>
+                        <Insets left="10.0" top="10.0" />
+                    </padding>
+                </HBox>
+
                 <Label text="Modern Not Tutucusu" styleClass="header-label">
                     <font>
                         <Font name="System Bold" size="22.0" />
@@ -28,7 +43,7 @@
                 </HBox>
             </children>
             <padding>
-                <Insets bottom="15.0" left="20.0" right="20.0" top="20.0" />
+                <Insets bottom="15.0" left="20.0" right="20.0" top="0.0" /> <!-- top padding 0 yapıldı -->
             </padding>
         </VBox>
     </top>
@@ -58,4 +73,5 @@
             </padding>
         </HBox>
     </bottom>
+
 </BorderPane>

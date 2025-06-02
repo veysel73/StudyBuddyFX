@@ -1,10 +1,15 @@
 package com.example.studybuddy;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import javafx.event.ActionEvent;
 import java.io.*;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -43,11 +48,23 @@ public class GunlukController {
      * Ana menüye dön butonu işlevi
      */
     @FXML
-    private void anaMenuyeDon() {
-        // Stage'i kapatarak önceki ekrana döner
-        Stage stage = (Stage) btnAnaMenu.getScene().getWindow();
-        stage.close();
+    private void anaMenuyeDon(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/com/example/studybuddy/Menu.fxml"));
+
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setFullScreen(true);  // Tam ekran yapar
+            stage.setMaximized(true);  // Maksimize eder (opsiyonel)
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
+
+
 
     /**
      * Geri dön butonu işlevi (yazma panelinden liste paneline döner)

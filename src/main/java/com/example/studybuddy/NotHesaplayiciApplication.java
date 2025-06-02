@@ -13,6 +13,9 @@ public class NotHesaplayiciApplication extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("NotHesaplayici.fxml"));
         stage.setTitle("Öğrenci Not Hesaplayıcı");
         stage.setScene(new Scene(root, 300, 250));
+        stage.setFullScreen(true); // ➤ EKRANI TAM EKRAN YAPAR
+        stage.setFullScreenExitHint(""); // ➤ (İsteğe bağlı) ESC çıkış uyarısını gizler
+
         stage.show();
     }
 

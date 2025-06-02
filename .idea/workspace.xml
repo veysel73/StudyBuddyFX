@@ -5,35 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="364a9302-57b8-4e46-8390-5dff8eb07647" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gunluk_kayittari/gunlukler.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gunluk_kayittari/gunlukler.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/loginApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/loginApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/AlanSecimApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/AlanSecimApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/AlanSecimController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/AlanSecimController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/FlashKart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/FlashKart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/GunlukApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/GunlukApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/GunlukController$Gunluk.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/GunlukController$Gunluk.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/GunlukController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/GunlukController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/KelimeEzberlemeApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/KelimeEzberlemeApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/KelimeEzberlemeController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/KelimeEzberlemeController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/KelimeEzberlemeController$FlashKart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/KelimeEzberlemeController$FlashKart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/KelimeEzberlemeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/KelimeEzberlemeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/MenuApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/MenuApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/MenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/NotHesaplayiciApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/NotHesaplayiciApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/NotHesaplayiciController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/NotHesaplayiciController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/PomodoroApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/PomodoroApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/PomodoroController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/PomodoroController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/ToDoController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/ToDoController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/ToDoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/ToDoController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/ToDoItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/ToDoItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/TodoApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/TodoApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/kitapApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/kitapApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/kitapOneriController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/kitapOneriController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/loginApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/loginApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/loginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/loginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/AlanSecimApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/AlanSecimApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/AlanSecimController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/AlanSecimController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/GunlukApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/GunlukApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/GunlukController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/GunlukController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/KelimeEzberlemeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/KelimeEzberlemeApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/NotHesaplayiciApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/NotHesaplayiciApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/NotHesaplayiciController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/NotHesaplayiciController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/ToDoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/ToDoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/ToDoItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/ToDoItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/TodoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/TodoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/kitapApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/kitapApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/kitapOneriController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/kitapOneriController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/Gunluk.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/Gunluk.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/Gunluk.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/Gunluk.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/Todo.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/Todo.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/kitapOneri.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/kitapOneri.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/kitapOneri.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/kitapOneri.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/menu.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +43,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/StudyBuddyFX" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -103,7 +95,7 @@
     "Maven.StudyBuddy [test].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "veysel",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/SceneBuilder/SceneBuilder.exe",

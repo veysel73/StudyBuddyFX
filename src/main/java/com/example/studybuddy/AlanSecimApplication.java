@@ -17,9 +17,11 @@ public class AlanSecimApplication extends Application {
         Scene scene = new Scene(root, 900, 700);
         scene.getStylesheets().add(getClass().getResource("/com/example/studybuddy/AlanSecim.css").toExternalForm());
         stage.setTitle("Kariyer Geliştirme Yolu");
-        stage.setMinWidth(900);
-        stage.setMinHeight(700);
         stage.setScene(scene);
+
+        stage.setFullScreen(true); // ➤ EKRANI TAM EKRAN YAPAR
+        stage.setFullScreenExitHint(""); // ➤ (İsteğe bağlı) ESC çıkış uyarısını gizler
+
         stage.show();
     }
 

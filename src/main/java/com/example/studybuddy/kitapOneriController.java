@@ -1,7 +1,11 @@
 package com.example.studybuddy;
 
-
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -13,25 +17,43 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
+import java.io.*;
+import java.util.Properties;
+
 public class kitapOneriController {
+
     @FXML
     private ScrollPane scrollPane;
     @FXML
     private VBox kitapContainer;
-
-    @FXML private Button btnAnaMenu;
-
-    /**
-     * Ana menüye dön butonu işlevi
-     */
     @FXML
-    private void anaMenuyeDon() {
-        // Stage'i kapatarak önceki ekrana döner
-        Stage stage = (Stage) btnAnaMenu.getScene().getWindow();
-        stage.close();
+    private Button btnAnaMenu;
+
+    private Properties kitapDurumlari;
+    private static final String PROPERTIES_FILE = "kitap_durumlari.properties";
+
+    @FXML
+    private void anaMenuyeDon(ActionEvent event) {
+        // Çıkış yaparken durumları kaydet
+        durumKaydet();
+
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/com/example/studybuddy/Menu.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setFullScreen(true);
+            stage.setMaximized(true);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
+
     @FXML
     public void initialize() {
+        // Properties dosyasını yükle
+        kitapDurumlari = new Properties();
+        durumYukle();
         kitapEkle("1. İki Şehrin Hikayesi – Charles Dickens",
                 "Özet: Fransız Devrimi sırasında Paris ve Londra'da geçen bu roman, aşk, fedakârlık ve devrim temalarını işler. Charles Darnay ve Sydney Carton'ın hayatları üzerinden, insan doğasının karmaşıklığı ve toplumun dönüşümü anlatılır.");
 
@@ -142,35 +164,67 @@ public class kitapOneriController {
         kitapEkle("50. Küçük Prens – Antoine de Saint-Exupéry",
                 "Özet: Bir pilotun çölde karşılaştığı Küçük Prens'in gezegenler arası yolculuğu ve yaşam hakkındaki düşünceleri anlatılır. Sevgi, arkadaşlık, masumiyet ve yetişkinlerin dünyasına yönelik eleştiriler, çocuk kitabı gibi görünen ama derin felsefi içeriğe sahip bu eserde toplanır.");
 
-        // ScrollPane ayarları
-        scrollPane.setFitToWidth(true);
-        scrollPane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
     }
 
-    private void kitapEkle(String kitapAdi, String ozet) {
-        // Kitap adı ve checkbox için HBox
-        HBox hbox = new HBox();
-        hbox.setSpacing(10);
+    private void kitapEkle(String baslik, String ozet) {
+        // Başlık etiketi
+        Label lblBaslik = new Label(baslik);
+        lblBaslik.setFont(Font.font("System", FontWeight.BOLD, 16));
 
-        // Kitap adı label'ı
-        Label adLabel = new Label(kitapAdi);
-        adLabel.setFont(Font.font("Arial", FontWeight.BOLD, 14));
-        adLabel.setStyle("-fx-text-fill: black;");
-        HBox.setHgrow(adLabel, Priority.ALWAYS); // Sola yasla
+        // Özet etiketi
+        Label lblOzet = new Label(ozet);
+        lblOzet.setWrapText(true);
 
-        // CheckBox (sağ köşeye hizalanmış)
-        CheckBox okunduCheck = new CheckBox("Okundu");
-        okunduCheck.setStyle("-fx-padding: 0 10 0 0;");
+        // CheckBox (okundu mu)
+        CheckBox checkBox = new CheckBox("Okundu");
 
-        hbox.getChildren().addAll(adLabel, okunduCheck);
+        // Kitap için benzersiz bir anahtar oluştur (başlığın ilk kelimelerini kullan)
+        String kitapAnahtari = baslik.replaceAll("[^a-zA-Z0-9]", "_").toLowerCase();
 
-        // Özet label'ı
-        Label ozetLabel = new Label(ozet);
-        ozetLabel.setFont(Font.font("Arial", FontWeight.NORMAL, 12));
-        ozetLabel.setStyle("-fx-text-fill: black; -fx-padding: 0 0 10 20;");
-        ozetLabel.setWrapText(true);
+        // Kaydedilmiş durumu yükle
+        boolean okundu = Boolean.parseBoolean(kitapDurumlari.getProperty(kitapAnahtari, "false"));
+        checkBox.setSelected(okundu);
 
-        // Container'a ekle
-        kitapContainer.getChildren().addAll(hbox, ozetLabel);
+        // CheckBox değiştiğinde kaydet
+        checkBox.setOnAction(e -> {
+            kitapDurumlari.setProperty(kitapAnahtari, String.valueOf(checkBox.isSelected()));
+            durumKaydet();
+        });
+
+        // Sağ alt köşe: checkbox'ı ayrı bir HBox içine al
+        HBox altSatir = new HBox(checkBox);
+        altSatir.setSpacing(10);
+
+        // Kitap kutusu
+        VBox kitapKutusu = new VBox(lblBaslik, lblOzet, altSatir);
+        kitapKutusu.setSpacing(5);
+        kitapKutusu.setStyle("-fx-padding: 10; -fx-background-color: #f0f0f0; -fx-background-radius: 10;");
+
+        // Ana container'a ekle
+        kitapContainer.getChildren().add(kitapKutusu);
+        VBox.setVgrow(kitapKutusu, Priority.NEVER);
+    }
+
+    private void durumYukle() {
+        try {
+            File file = new File(PROPERTIES_FILE);
+            if (file.exists()) {
+                FileInputStream fis = new FileInputStream(file);
+                kitapDurumlari.load(fis);
+                fis.close();
+            }
+        } catch (IOException e) {
+            System.err.println("Kitap durumları yüklenirken hata oluştu: " + e.getMessage());
+        }
+    }
+
+    private void durumKaydet() {
+        try {
+            FileOutputStream fos = new FileOutputStream(PROPERTIES_FILE);
+            kitapDurumlari.store(fos, "Kitap okuma durumları");
+            fos.close();
+        } catch (IOException e) {
+            System.err.println("Kitap durumları kaydedilirken hata oluştu: " + e.getMessage());
+        }
     }
 }

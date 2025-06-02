@@ -22,6 +22,7 @@
 
         <Button fx:id="btnAnaMenu" onAction="#anaMenuyeDon" style="-fx-font-weight: bold;" text=" ⬅️Ana Menü" />
 
+
         <HBox alignment="CENTER_LEFT" spacing="10">
             <DatePicker fx:id="dateAramaPicker" />
             <Button fx:id="btnTarihAra" onAction="#tarihIleAra" style="-fx-font-weight: bold;" text="Tarihle Ara" />

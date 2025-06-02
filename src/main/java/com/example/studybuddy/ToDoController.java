@@ -9,10 +9,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.CheckBoxListCell;
-import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 public class ToDoController implements Initializable {
 
@@ -31,8 +35,10 @@ public class ToDoController implements Initializable {
     @FXML
     private DatePicker taskDatePicker;
 
-    private ObservableList<ToDoItem> tasks = FXCollections.observableArrayList();
+    @FXML
+    private Button backButton; // Yeni eklenen geri butonu
 
+    private ObservableList<ToDoItem> tasks = FXCollections.observableArrayList();
     private final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
     @Override
@@ -43,7 +49,6 @@ public class ToDoController implements Initializable {
         // Özel CheckBox hücre fabrikası
         taskListView.setCellFactory(lv -> new CheckBoxListCell<>(item -> {
             item.completedProperty().addListener((obs, wasCompleted, isNowCompleted) -> {
-                // Hücreyi güncelle (özel stil için)
                 lv.refresh();
             });
             return item.completedProperty();
@@ -57,14 +62,12 @@ public class ToDoController implements Initializable {
                     setGraphic(null);
                     setStyle("");
                 } else {
-                    // Görevin tamamlanma durumuna göre stil uygula
                     if (item.isCompleted()) {
-                        setStyle("-fx-background-color: rgba(46, 204, 113, 0.2); -fx-text-fill: #707070; -fx-strikethrough: true;"); // Yarı saydam yeşil arkaplan, soluk yazı, üstü çizili
+                        setStyle("-fx-background-color: rgba(46, 204, 113, 0.2); -fx-text-fill: #707070; -fx-strikethrough: true;");
                     } else {
                         setStyle("-fx-background-color: transparent;");
                     }
 
-                    // Tarih bilgisini göster
                     if (item.getDate() != null) {
                         setText(item.getTask() + " - " + item.getDate().format(dateFormatter));
                     } else {
@@ -85,19 +88,18 @@ public class ToDoController implements Initializable {
 
         // Başlangıçta deleteButton'u devre dışı bırak
         deleteButton.setDisable(true);
+
+        // Geri butonu işlevi
+        backButton.setOnAction(this::goBackToMainMenu);
     }
 
     @FXML
     private void handleAddTask(ActionEvent event) {
         String text = taskInput.getText().trim();
         if (!text.isEmpty()) {
-            // Yeni görev oluştur
             ToDoItem newItem = new ToDoItem(text);
-            // Tarih bilgisini ekle
             newItem.setDate(taskDatePicker.getValue());
-            // Görevler listesine ekle
             tasks.add(newItem);
-            // Girdi alanını temizle ve odaklan
             taskInput.clear();
             taskInput.requestFocus();
         }
@@ -111,9 +113,23 @@ public class ToDoController implements Initializable {
         }
     }
 
-    // Enter tuşuna basıldığında da görev ekleme
     @FXML
     private void handleKeyPress(ActionEvent event) {
         handleAddTask(event);
+    }
+
+    @FXML
+    private void goBackToMainMenu(ActionEvent event) {
+        try {
+            // menu.fxml dosyasını yükle (MenuApplication'ın kullandığı aynı dosya)
+            Parent root = FXMLLoader.load(getClass().getResource("/com/example/studybuddy/menu.fxml"));
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root, 600, 400);
+            stage.setScene(scene);
+            stage.setFullScreen(true); // Tam ekran modunda aç
+           // stage.setFullScreenExitHint(""); // ESC çıkış uyarısını gizle
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

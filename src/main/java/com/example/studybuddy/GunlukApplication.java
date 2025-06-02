@@ -17,6 +17,10 @@ public class GunlukApplication extends Application {
         Scene scene = new Scene(root, 600, 500);
         stage.setTitle("Günlük Uygulaması");
         stage.setScene(scene);
+
+        stage.setFullScreen(true); // ➤ EKRANI TAM EKRAN YAPAR
+        stage.setFullScreenExitHint(""); // ➤ (İsteğe bağlı) ESC çıkış uyarısını gizler
+
         stage.show();
     }
 

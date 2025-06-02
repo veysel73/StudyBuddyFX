@@ -16,15 +16,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 public class MenuController {
     // Ana sayfa butonları
     @FXML private Button exitButton;
     @FXML private Button btn1;  // Pomodoro
-    @FXML private Button btn2;  // To-Do List (şu an event yok)
+    @FXML private Button btn2;  // To-Do List
     @FXML private Button btn3;  // Kelime Ezberleme
-
+    @FXML private Button todoButton;
     // Yeni eklenen butonlar
     @FXML private Button btnNotHesaplama;
     @FXML private Button btnKitapOneri;
@@ -43,14 +42,27 @@ public class MenuController {
     private StackPane contentPane;
 
     @FXML
-    private void notHesaplayiciAc() {
+    private void handleToDoList(ActionEvent event) {
         try {
-            VBox notHesaplayici = FXMLLoader.load(getClass().getResource("NotHesaplayici.fxml"));
-            contentPane.getChildren().clear();
-            contentPane.getChildren().add(notHesaplayici);
-        } catch (IOException e) {
+            // ToDo sayfasını yükle
+            Parent root = FXMLLoader.load(getClass().getResource("/com/example/studybuddy/ToDo.fxml")); // ToDo.fxml dosya adınızı kontrol edin
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.setFullScreen(true); // ToDo sayfasını tam ekran aç
+           // stage.setFullScreenExitHint(""); // ESC çıkış uyarısını gizle
+        } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    @FXML
+    private void handleStudyTimer(ActionEvent event) {
+        // Study Timer sayfasına git
+    }
+
+    @FXML
+    private void handleNotes(ActionEvent event) {
+        // Notes sayfasına git
     }
     @FXML
     public void initialize() {
@@ -79,10 +91,9 @@ public class MenuController {
         // Çıkış butonu işlevi
         exitButton.setOnAction(event -> System.exit(0));
 
-        // Pomodoro uygulaması için btn1 aksiyonu
+        // Uygulama butonlarına aksiyonlar ekle
         btn1.setOnAction(event -> pomodoroUygulamasiniAc());
-
-        // Kelime Ezberleme uygulaması için btn3 aksiyonu
+        btn2.setOnAction(event -> todoUygulamasiniAc());
         btn3.setOnAction(event -> kelimeEzberlemeUygulamasiniAc());
 
         // Yeni butonlara tıklama olaylarını bağla
@@ -110,8 +121,7 @@ public class MenuController {
         }
     }
 
-    // Örnek açma metotları — kendi uygulamalarına göre değiştir
-
+    // Uygulama açma metodları
     public void pomodoroUygulamasiniAc() {
         try {
             Stage stage = new Stage();
@@ -119,6 +129,17 @@ public class MenuController {
             app.start(stage);
         } catch (Exception e) {
             System.err.println("Pomodoro uygulaması açılamadı: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
+    public void todoUygulamasiniAc() {
+        try {
+            Stage stage = new Stage();
+            TodoApplication app = new TodoApplication();
+            app.start(stage);
+        } catch (Exception e) {
+            System.err.println("To-Do List uygulaması açılamadı: " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -177,34 +198,32 @@ public class MenuController {
             e.printStackTrace();
         }
     }
+
+    // ActionEvent parametreli versiyonlar
     @FXML
     private void notHesaplayiciAc(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("notHesaplayici.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
-
-        // Tam ekran yap
         stage.setFullScreen(true);
     }
+
     @FXML
     private void kitapOneriUygulamasiniAc(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("btnKitapOneri.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
-
-        // Tam ekran yap
         stage.setFullScreen(true);
     }
+
     @FXML
     private void gunlukTutmaUygulamasiniAc(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("btnGunlukTutma.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
-
-        // Tam ekran yap
         stage.setFullScreen(true);
     }
 
@@ -214,27 +233,35 @@ public class MenuController {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
-
-        // Tam ekran yap
         stage.setFullScreen(true);
-    } @FXML
+    }
+
+    @FXML
     private void alanGelistirmeUygulamasiniAc(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("btnAlanGelistirme.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
-
-        // Tam ekran yap
         stage.setFullScreen(true);
     }
+
     @FXML
     private void kelimeEzberlemeUygulamasiniAc(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("btn2.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
-
-        // Tam ekran yap
         stage.setFullScreen(true);
     }
+
+    // MenuController sınıfında sadece todoUygulamasiniAc metodunu güncelleyin:
+    @FXML
+    private void todoUygulamasiniAc(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Todo.fxml")); // Todo.fxml dosyanızın adı
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.setFullScreen(true); // Tam ekran olarak aç
+    }
+
 }

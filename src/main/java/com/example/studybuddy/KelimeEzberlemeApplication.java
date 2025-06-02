@@ -25,7 +25,7 @@ public class KelimeEzberlemeApplication extends Application {
             primaryStage.setScene(scene);
             primaryStage.setMaximized(true); // Tam ekran olarak başlat
             primaryStage.show();
-
+            primaryStage.setFullScreenExitHint("");
             // Controller sınıfını al
             KelimeEzberlemeController controller = loader.getController();
             controller.initialize();

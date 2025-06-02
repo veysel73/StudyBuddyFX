@@ -1,5 +1,6 @@
 # Java build
 /target/
+target/
 
 # IntelliJ
 .idea/

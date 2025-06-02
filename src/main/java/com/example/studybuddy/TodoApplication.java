@@ -10,11 +10,12 @@ public class TodoApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("Todo.fxml"));
-        primaryStage.setTitle("Modern Not Tutucusu");
-        primaryStage.setScene(new Scene(root, 600, 450));
-        primaryStage.setMinWidth(500);
-        primaryStage.setMinHeight(400);
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/studybuddy/todo.fxml"));
+        Scene scene = new Scene(root, 600, 400);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("To-Do Listesi");
+        primaryStage.setFullScreen(true); // EKRANI TAM EKRAN YAPAR
+        primaryStage.setFullScreenExitHint(""); // ESC çıkış uyarısını gizler
         primaryStage.show();
     }
 
