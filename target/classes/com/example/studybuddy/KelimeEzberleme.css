@@ -1,0 +1,129 @@
+/* Ana renkler */
+.root {
+    -fx-background-color: #f8f9fa;
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Kart container */
+.kart-container {
+    -fx-background-color: lightblue;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);
+    -fx-padding: 30px;
+    -fx-min-height: 250px;
+    -fx-min-width: 500px;
+}
+
+/* Kart içerik yazısı */
+.kart-icerik {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #343a40;
+    -fx-alignment: center;
+}
+
+/* Bütün butonlar için temel stil */
+Button {
+    -fx-background-color: #e9ecef;
+    -fx-text-fill: #343a40;
+    -fx-background-radius: 5px;
+    -fx-padding: 8px 12px;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+}
+
+Button:hover {
+    -fx-background-color: #dee2e6;
+}
+
+/* Tekrar butonları */
+.tekrar-button {
+    -fx-min-width: 80px;
+    -fx-min-height: 35px;
+}
+
+/* Farklı tekrar butonları için renkler */
+#birDkButton {
+    -fx-background-color: #ff6b6b;
+    -fx-text-fill: white;
+}
+
+#ucDkButton {
+    -fx-background-color: #ff922b;
+    -fx-text-fill: white;
+}
+
+#sekizDkButton {
+    -fx-background-color: #ffd43b;
+    -fx-text-fill: #343a40;
+}
+
+#onBesDkButton {
+    -fx-background-color: #69db7c;
+    -fx-text-fill: #343a40;
+}
+
+#yirmiDortSaatButton {
+    -fx-background-color: #4dabf7;
+    -fx-text-fill: white;
+}
+
+/* Tekrar butonları hover */
+#birDkButton:hover { -fx-background-color: #fa5252; }
+#ucDkButton:hover { -fx-background-color: #fd7e14; }
+#sekizDkButton:hover { -fx-background-color: #fab005; }
+#onBesDkButton:hover { -fx-background-color: #51cf66; }
+#yirmiDortSaatButton:hover { -fx-background-color: #339af0; }
+
+/* Kart ekleme alanı */
+TextField {
+    -fx-background-color: white;
+    -fx-border-color: #ced4da;
+    -fx-border-radius: 4px;
+    -fx-padding: 8px;
+}
+
+TextField:focused {
+    -fx-border-color: #4dabf7;
+    -fx-effect: dropshadow(gaussian, rgba(77,171,247,0.3), 3, 0, 0, 0);
+}
+
+/* Kartı ekleme butonu */
+.ekle-button {
+    -fx-background-color: #20c997;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-min-width: 40px;
+    -fx-min-height: 35px;
+}
+
+.ekle-button:hover {
+    -fx-background-color: #12b886;
+}
+
+/* Sonraki kart butonu */
+#sonrakiKartButton {
+    -fx-background-color: #748ffc;
+    -fx-text-fill: white;
+    -fx-min-width: 120px;
+}
+
+#sonrakiKartButton:hover {
+    -fx-background-color: #5c7cfa;
+}
+
+/* Durum etiketi */
+#durumLabel {
+    -fx-text-fill: #495057;
+    -fx-font-size: 13px;
+}
+
+/* Label stilleri */
+Label {
+    -fx-text-fill: #495057;
+}
+
+/* Alt alan için */
+BorderPane > .bottom {
+    -fx-padding: 20px 0 0 0;
+}

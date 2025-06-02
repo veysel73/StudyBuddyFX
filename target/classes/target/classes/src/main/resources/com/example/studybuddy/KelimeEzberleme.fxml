@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.studybuddy.KelimeEzberlemeController"
+            prefHeight="768.0" prefWidth="1024.0">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Button fx:id="geriDonButton" text="← Geri Dön" styleClass="geri-don-button">
+                <font>
+                    <Font size="14.0" />
+                </font>
+            </Button>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox fx:id="kartContainer" alignment="CENTER" spacing="20" styleClass="kart-container">
+            <Label fx:id="kartIcerikLabel" styleClass="kart-icerik" text="Başlamak için kart ekleyin" wrapText="true">
+                <font>
+                    <Font size="36.0" />
+                </font>
+            </Label>
+        </VBox>
+    </center>
+
+    <bottom>
+        <VBox spacing="30" alignment="CENTER">
+            <!-- Tekrar butonları -->
+            <HBox fx:id="tekrarButtonBox" spacing="20" alignment="CENTER">
+                <Button fx:id="birDkButton" text="&lt; 1 dk" styleClass="tekrar-button">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <prefWidth>120</prefWidth>
+                    <prefHeight>40</prefHeight>
+                </Button>
+                <Button fx:id="ucDkButton" text="3 dk" styleClass="tekrar-button">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <prefWidth>120</prefWidth>
+                    <prefHeight>40</prefHeight>
+                </Button>
+                <Button fx:id="sekizDkButton" text="8 dk" styleClass="tekrar-button">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <prefWidth>120</prefWidth>
+                    <prefHeight>40</prefHeight>
+                </Button>
+                <Button fx:id="onBesDkButton" text="15 dk" styleClass="tekrar-button">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <prefWidth>120</prefWidth>
+                    <prefHeight>40</prefHeight>
+                </Button>
+                <Button fx:id="yirmiDortSaatButton" text="+24 saat" styleClass="tekrar-button">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <prefWidth>120</prefWidth>
+                    <prefHeight>40</prefHeight>
+                </Button>
+            </HBox>
+
+            <!-- Kart ekleme alanı -->
+            <HBox spacing="15" alignment="CENTER">
+                <Label text="Ön Yüz:">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="onYuzTextField" promptText="Örn: car">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <prefWidth>200</prefWidth>
+                    <prefHeight>40</prefHeight>
+                </TextField>
+                <Label text="Cevap Yüzü:">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="cevapYuzuTextField" promptText="Örn: araba">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <prefWidth>200</prefWidth>
+                    <prefHeight>40</prefHeight>
+                </TextField>
+                <Button fx:id="kartEkleButton" text="+" styleClass="ekle-button">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <prefWidth>50</prefWidth>
+                    <prefHeight>40</prefHeight>
+                </Button>
+            </HBox>
+
+            <!-- Kontrol butonları -->
+            <HBox spacing="20" alignment="CENTER">
+                <Button fx:id="sonrakiKartButton" text="Sonraki Kart" styleClass="sonraki-button">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                    <prefWidth>180</prefWidth>
+                    <prefHeight>50</prefHeight>
+                </Button>
+                <Label fx:id="durumLabel" text="Toplam: 0 | Tekrar Bekleyen: 0 | Hazır: 0">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+            </HBox>
+
+            <padding>
+                <Insets bottom="30" />
+            </padding>
+        </VBox>
+    </bottom>
+</BorderPane>

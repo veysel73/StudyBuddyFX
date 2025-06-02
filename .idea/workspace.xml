@@ -5,11 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="364a9302-57b8-4e46-8390-5dff8eb07647" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/studybuddy/menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gunluk_kayittari/gunlukler.txt" beforeDir="false" afterPath="$PROJECT_DIR$/gunluk_kayittari/gunlukler.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/loginApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/studybuddy/loginApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/AlanSecimApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/AlanSecimApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/AlanSecimController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/AlanSecimController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/FlashKart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/FlashKart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/GunlukApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/GunlukApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/GunlukController$Gunluk.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/GunlukController$Gunluk.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/GunlukController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/GunlukController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/KelimeEzberlemeApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/KelimeEzberlemeApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/KelimeEzberlemeController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/KelimeEzberlemeController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/KelimeEzberlemeController$FlashKart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/KelimeEzberlemeController$FlashKart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/KelimeEzberlemeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/KelimeEzberlemeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/MenuApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/MenuApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/MenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/MenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/NotHesaplayiciApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/NotHesaplayiciApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/NotHesaplayiciController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/NotHesaplayiciController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/PomodoroApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/PomodoroApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/PomodoroController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/PomodoroController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/ToDoController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/ToDoController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/ToDoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/ToDoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/ToDoItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/ToDoItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/TodoApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/TodoApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/kitapApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/kitapApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/kitapOneriController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/kitapOneriController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/loginApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/loginApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/loginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/loginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/studybuddy/menu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/studybuddy/menu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,12 +87,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.AlanSecimApplication.executor": "Run",
+    "Application.BirdGameApplication.executor": "Run",
     "Application.GunlukApplication.executor": "Run",
     "Application.HelloApplication.executor": "Run",
     "Application.KelimeEzberlemeApplication.executor": "Run",
     "Application.MenuApplication.executor": "Run",
     "Application.NotHesaplayiciApplication.executor": "Run",
     "Application.PomodoroApplication.executor": "Run",
+    "Application.TodoApplication.executor": "Run",
     "Application.kitapApplication.executor": "Run",
     "Application.loginApplication.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
@@ -86,7 +112,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.26666668",
     "settings.editor.selected.configurable": "MavenSettings",
